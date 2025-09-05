@@ -36,7 +36,6 @@ typewriter() {
         sleep 0.03
     done
     echo ""
-    beep
 }
 
 progress_bar() {
@@ -97,9 +96,32 @@ banner() {
     echo "║    ╚══▀▀═╝  ╚═╝   ╚═╝    ╚═╝  ╚═╝ ╚═╝       ║"
     echo "║                                        ║"
     echo "║        🔥 POWERED BY SHADOW.XYZ ⭐      ║"
->>>>>>> f2c3c54 ( 🍂 sʜᴀᴅᴏᴡ 🌱)
     echo "╚════════════════════════════════════════╝"
     echo -e "${RESET}"
+    beep
+}
+
+separator() {
+    echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"
+}
+
+epic_finish() {
+    echo -e "${GREEN}"
+    echo "╔═══════════════════════════════════════╗"
+    echo "║    ✅ INSTALACIÓN FINALIZADA CON ÉXITO ║"
+    echo "╠═══════════════════════════════════════╣"
+    echo "║   🌍 Repositorio subido a GitHub 🚀    ║"
+    echo "║   ✨ Gracias por usar Shadow.xyz ✨     ║"
+    echo "╚═══════════════════════════════════════╝"
+    echo -e "${RESET}"
+    beep
+
+    # 🔥 Mensaje extra
+    separator
+    typewriter "🌟 Proyecto listo para la acción! 🌟"
+    echo -e "${CYAN}👉 Recuerda: git add . && git commit -m \"mensaje\" && git push${RESET}"
+    echo -e "${ORANGE}⚡ Shadow.xyz siempre contigo ⚡${RESET}"
+    separator
     beep
 }
 
@@ -145,5 +167,4 @@ git remote add origin "$repo_url" &>/dev/null
 (progress_gitpush) & spinner "⏳ Procesando push"
 wait
 
-echo -e "${MAGENTA}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"
-beep
+epic_finish
