@@ -89,16 +89,17 @@ banner() {
     echo -e "${MAGENTA}"
     echo "╔════════════════════════════════════════╗"
     echo "║                                        ║"
-    echo -e "║   ${BLUE}██████╗ ${CYAN}██╗████████╗${GREEN}██╗  ██╗${YELLOW}██████╗   ${MAGENTA}║"
-    echo -e "║  ${BLUE}██╔═══██╗${CYAN}██║╚══██╔══╝${GREEN}██║  ██║${YELLOW}██╔══██╗  ${MAGENTA}║"
-    echo -e "║  ${BLUE}██║   ██║${CYAN}██║   ██║   ${GREEN}███████║${YELLOW}██████╔╝  ${MAGENTA}║"
-    echo -e "║  ${BLUE}██║▄▄ ██║${CYAN}██║   ██║   ${GREEN}██╔══██║${YELLOW}██╔═══╝   ${MAGENTA}║"
-    echo -e "║  ${BLUE}╚██████╔╝${CYAN}██║   ██║   ${GREEN}██║  ██║${YELLOW}██║       ${MAGENTA}║"
-    echo -e "║   ${BLUE}╚══▀▀═╝ ${CYAN}╚═╝   ╚═╝   ${GREEN}╚═╝  ╚═╝${YELLOW}╚═╝       ${MAGENTA}║"
+    echo "║   ${BLUE}██████╗ ${CYAN}██╗████████╗${GREEN}██╗  ██╗${YELLOW}██████╗   ${MAGENTA}║"
+    echo "║  ${BLUE}██╔═══██╗${CYAN}██║╚══██╔══╝${GREEN}██║  ██║${YELLOW}██╔══██╗  ${MAGENTA}║"
+    echo "║  ${BLUE}██║   ██║${CYAN}██║   ██║   ${GREEN}███████║${YELLOW}██████╔╝  ${MAGENTA}║"
+    echo "║  ${BLUE}██║▄▄ ██║${CYAN}██║   ██║   ${GREEN}██╔══██║${YELLOW}██╔═══╝   ${MAGENTA}║"
+    echo "║  ${BLUE}╚██████╔╝${CYAN}██║   ██║   ${GREEN}██║  ██║${YELLOW}██║       ${MAGENTA}║"
+    echo "║   ${BLUE}╚══▀▀═╝ ${CYAN}╚═╝   ╚═╝   ${GREEN}╚═╝  ╚═╝${YELLOW}╚═╝       ${MAGENTA}║"
     echo "║                                        ║"
-    echo -e "║        ${ORANGE}🔥 POWERED BY SHADOW.XYZ ⭐       ${MAGENTA}║"
+    echo "║        ${ORANGE}🔥 POWERED BY SHADOW.XYZ 🔥       ${MAGENTA}║"
     echo "╚════════════════════════════════════════╝"
     echo -e "${RESET}"
+    beep
 }
 
 # ====== INICIO ======
