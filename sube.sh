@@ -96,7 +96,7 @@ banner() {
     echo "║  ${BLUE}╚██████╔╝${CYAN}██║   ██║   ${GREEN}██║  ██║${YELLOW}██║       ${MAGENTA}║"
     echo "║   ${BLUE}╚══▀▀═╝ ${CYAN}╚═╝   ╚═╝   ${GREEN}╚═╝  ╚═╝${YELLOW}╚═╝       ${MAGENTA}║"
     echo "║                                        ║"
-    echo "║        ${ORANGE}🔥 POWERED BY SHADOW.XYZ 🔥       ${MAGENTA}║"
+    echo "║        ${ORANGE}🔥 POWERED BY SHADOW.XYZ ⭐      ${MAGENTA}║"
     echo "╚════════════════════════════════════════╝"
     echo -e "${RESET}"
     beep
