@@ -87,15 +87,15 @@ banner() {
     clear
     echo -e "${MAGENTA}"
     echo "╔═════════════════════════════════════════════╗"
-    echo "║                                             ║"
+    echo "║                                                     ║"
     echo "║    ██████╗  ██╗████████╗ ██╗  ██╗ ██████╗   ║"
     echo "║   ██╔═══██╗ ██║╚══██╔══╝ ██║  ██║ ██╔══██╗  ║"
     echo "║   ██║   ██║ ██║   ██║    ███████║ ██████╔╝  ║"
     echo "║   ██║▄▄ ██║ ██║   ██║    ██╔══██║ ██╔═══╝   ║"
     echo "║   ╚██████╔╝ ██║   ██║    ██║  ██║ ██║       ║"
     echo "║    ╚══▀▀═╝  ╚═╝   ╚═╝    ╚═╝  ╚═╝ ╚═╝       ║"
-    echo "║                                             ║"
-    echo "║        🔥 POWERED BY SHADOW.XYZ ⭐          ║"
+    echo "║                                                    ║"
+    echo "║        🔥 POWERED BY SHADOW.XYZ ⭐                 ║"
     echo "╚════════════════════════════════════════════╝"
     echo -e "${RESET}"
     beep
@@ -119,7 +119,7 @@ epic_finish() {
     # 🔥 Mensaje extra
     separator
     typewriter "🌟 Proyecto listo para la acción! 🌟"
-    echo -e "${CYAN}👉 Recuerda: git add . && git commit -m \"mensaje\" && git push${RESET}"
+    echo -e "${CYAN}👉 Recuerda: seguirme en mi gituhb https://github.com/Yuji-XDev/${RESET}"
     echo -e "${ORANGE}⚡ Shadow.xyz siempre contigo ⚡${RESET}"
     separator
     beep
@@ -128,7 +128,7 @@ epic_finish() {
 # ====== INICIO ======
 banner
 typewriter "✨ Bienvenido al instalador mágico de Shadow.xyz ✨"
-loading "🔍 Preparando entorno"
+loading "⚽ Preparando entorno"
 sleep 0.5
 
 echo ""
@@ -136,7 +136,7 @@ read -p "🍂 Ruta de la carpeta: " folder_path
 read -p "🌱 URL del repositorio (https://github.com/usuario/repositorio.git): " repo_url
 
 if [ ! -d "$folder_path" ]; then
-  echo -e "${RED}❌ Error: Carpeta no encontrada.${RESET}"
+  echo -e "${RED}Error: Carpeta no encontrada.${RESET}"
   beep
   exit 1
 fi
