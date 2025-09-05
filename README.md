@@ -23,7 +23,7 @@ Es ideal para simplificar tareas comunes al trabajar con **Git** ⚡.
 
 ### Instalación de Git y cURL
 
-En **Linux**, puedes instalarlos con los siguientes comandos:
+🔋 En **Linux**, puedes instalarlos con los siguientes comandos:
 
 ```bash
 # Instalar Git
@@ -33,7 +33,7 @@ sudo apt update && sudo apt install git -y
 sudo apt install curl -y
 ```
 
-En **Termux** (Android):
+⭐ En **Termux** (Android):
 
 ```bash
 # Actualizar paquetes
