@@ -66,7 +66,7 @@ spinner() {
 }
 
 progress_gitpush() {
-    echo -e "${MAGENTA}⭐ Subiendo archivos a GitHub...${RESET}"
+    echo -e "${MAGENTA}⭐ Subiendo archivos a GitHub....${RESET}"
     total_steps=6
     step=0
     git push -u origin main 2>&1 | while read -r line; do
@@ -120,7 +120,7 @@ epic_finish() {
     separator
     typewriter "🌟 Proyecto listo para la acción! 🌟"
     echo -e "${CYAN}👉 Recuerda: seguirme en mi gituhb https://github.com/Yuji-XDev/${RESET}"
-    echo -e "${ORANGE}⚡ Shadow.xyz siempre contigo ⚡${RESET}"
+    echo -e "${ORANGE}⚡ Shadow.xyz 💥${RESET}"
     separator
     beep
 }
@@ -164,7 +164,7 @@ git branch -M main &>/dev/null
 progress_bar "🔗 Configurando remoto"
 git remote add origin "$repo_url" &>/dev/null
 
-(progress_gitpush) & spinner "⏳ Procesando push"
+(progress_gitpush) & spinner "⏳ Procesando push....."
 wait
 
 epic_finish
