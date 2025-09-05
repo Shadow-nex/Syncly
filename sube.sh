@@ -20,7 +20,7 @@ beep() {
 
 loading() {
     msg=$1
-    echo -ne "${YELLOW}${msg}"
+    echo -ne " ${msg}"
     for i in {1..3}; do
         echo -ne "."
         sleep 0.4
@@ -32,7 +32,7 @@ loading() {
 typewriter() {
     text=$1
     for (( i=0; i<${#text}; i++ )); do
-        echo -ne "${CYAN}${text:$i:1}${RESET}"
+        echo -ne " ${text:$i:1}${RESET}"
         sleep 0.03
     done
     echo ""
@@ -44,10 +44,10 @@ progress_bar() {
     echo -e "${MAGENTA}${msg}${RESET}\n"
     bar="===================="
     for i in $(seq 1 20); do
-        echo -ne "${BLUE}[${GREEN}${bar:0:i}${WHITE}${bar:i}] $((i*5))% \r"
+        echo -ne " [ ${bar:0:i}${WHITE}${bar:i}] $((i*5))% \r"
         sleep 0.08
     done
-    echo -e "\n${GREEN}✔ Completado${RESET}\n"
+    echo -e "\n ✔ Completado${RESET}\n"
     beep
     sleep 0.3
 }
@@ -77,10 +77,10 @@ progress_gitpush() {
             filled=$(( percent / 5 ))
             empty=$(( 20 - filled ))
             bar=$(printf "%${filled}s" | tr ' ' '█')$(printf "%${empty}s")
-            printf "${CYAN}[%-20s] %3d%%${RESET} ${WHITE}%s${RESET}\r" "$bar" "$percent" "$line"
+            printf " [%-20s] %3d%%${RESET} ${WHITE}%s${RESET}\r" "$bar" "$percent" "$line"
         fi
     done
-    echo -e "\n${GREEN}✔ Push completado con éxito${RESET}"
+    echo -e "\n ✔ Push completado con éxito${RESET}"
     beep
 }
 
@@ -89,14 +89,15 @@ banner() {
     echo -e "${MAGENTA}"
     echo "╔════════════════════════════════════════╗"
     echo "║                                        ║"
-    echo "║   ${BLUE}██████╗ ${CYAN}██╗████████╗${GREEN}██╗  ██╗${YELLOW}██████╗   ${MAGENTA}║"
-    echo "║  ${BLUE}██╔═══██╗${CYAN}██║╚══██╔══╝${GREEN}██║  ██║${YELLOW}██╔══██╗  ${MAGENTA}║"
-    echo "║  ${BLUE}██║   ██║${CYAN}██║   ██║   ${GREEN}███████║${YELLOW}██████╔╝  ${MAGENTA}║"
-    echo "║  ${BLUE}██║▄▄ ██║${CYAN}██║   ██║   ${GREEN}██╔══██║${YELLOW}██╔═══╝   ${MAGENTA}║"
-    echo "║  ${BLUE}╚██████╔╝${CYAN}██║   ██║   ${GREEN}██║  ██║${YELLOW}██║       ${MAGENTA}║"
-    echo "║   ${BLUE}╚══▀▀═╝ ${CYAN}╚═╝   ╚═╝   ${GREEN}╚═╝  ╚═╝${YELLOW}╚═╝       ${MAGENTA}║"
+    echo "║    ██████╗  ██╗████████╗ ██╗  ██╗ ██████╗   ║"
+    echo "║   ██╔═══██╗ ██║╚══██╔══╝ ██║  ██║ ██╔══██╗  ║"
+    echo "║   ██║   ██║ ██║   ██║    ███████║ ██████╔╝  ║"
+    echo "║   ██║▄▄ ██║ ██║   ██║    ██╔══██║ ██╔═══╝   ║"
+    echo "║   ╚██████╔╝ ██║   ██║    ██║  ██║ ██║       ║"
+    echo "║    ╚══▀▀═╝  ╚═╝   ╚═╝    ╚═╝  ╚═╝ ╚═╝       ║"
     echo "║                                        ║"
-    echo "║        ${ORANGE}🔥 POWERED BY SHADOW.XYZ ⭐      ${MAGENTA}║"
+    echo "║        🔥 POWERED BY SHADOW.XYZ ⭐      ║"
+>>>>>>> f2c3c54 ( 🍂 sʜᴀᴅᴏᴡ 🌱)
     echo "╚════════════════════════════════════════╝"
     echo -e "${RESET}"
     beep
