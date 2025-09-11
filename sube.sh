@@ -10,29 +10,27 @@ CYAN="\033[1;36m"
 WHITE="\033[1;37m"
 ORANGE="\033[38;5;208m"
 PINK="\033[38;5;213m"
+PURPLE="\033[38;5;93m"
 RESET="\033[0m"
 
 # ====== FUNCIONES ======
-beep() {
-    echo -ne "\007"
-    tput bel 2>/dev/null || true
-}
+beep() { echo -ne "\007"; tput bel 2>/dev/null || true; }
 
 loading() {
     msg=$1
-    echo -ne " ${msg}"
+    echo -ne " ${YELLOW}${msg}${RESET}"
     for i in {1..3}; do
         echo -ne "."
         sleep 0.4
     done
-    echo -e "${RESET}"
+    echo ""
     beep
 }
 
 typewriter() {
     text=$1
     for (( i=0; i<${#text}; i++ )); do
-        echo -ne " ${text:$i:1}${RESET}"
+        echo -ne " ${CYAN}${text:$i:1}${RESET}"
         sleep 0.03
     done
     echo ""
@@ -43,10 +41,10 @@ progress_bar() {
     echo -e "${MAGENTA}${msg}${RESET}\n"
     bar="===================="
     for i in $(seq 1 20); do
-        echo -ne " [ ${bar:0:i}${WHITE}${bar:i}] $((i*5))% \r"
+        echo -ne " [ ${GREEN}${bar:0:i}${WHITE}${bar:i}] $((i*5))% \r"
         sleep 0.08
     done
-    echo -e "\n ✔ Completado${RESET}\n"
+    echo -e "\n ${GREEN}✔ Completado${RESET}\n"
     beep
     sleep 0.3
 }
@@ -54,7 +52,6 @@ progress_bar() {
 spinner() {
     msg=$1
     spin='⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'
-    echo -ne "${ORANGE}${msg} "
     i=0
     while kill -0 $! 2>/dev/null; do
         i=$(( (i+1) %10 ))
@@ -66,34 +63,40 @@ spinner() {
 }
 
 progress_gitpush() {
-    echo -e "${MAGENTA}⭐ Subiendo archivos a GitHub....${RESET}"
+    echo -e "${ORANGE}⭐ Subiendo archivos a GitHub...${RESET}"
     total_steps=6
     step=0
+
+    # Ejecutamos git push primero (para pedir credenciales)
     git push -u origin main 2>&1 | while read -r line; do
+        # Recién aquí lanzamos el spinner después del login
         if [[ "$line" =~ (Counting|Compressing|Writing|Delta|Total|Receiving) ]]; then
+            if [ $step -eq 0 ]; then
+                ( while true; do sleep 1; done ) & spinner "⏳ Procesando push..."
+            fi
             step=$((step + 1))
             percent=$(( step * 100 / total_steps ))
             filled=$(( percent / 5 ))
             empty=$(( 20 - filled ))
             bar=$(printf "%${filled}s" | tr ' ' '█')$(printf "%${empty}s")
-            printf " [%-20s] %3d%%${RESET} ${WHITE}%s${RESET}\r" "$bar" "$percent" "$line"
+            printf " [%-20s] %3d%%${RESET} ${BLUE}%s${RESET}\r" "$bar" "$percent" "$line"
         fi
     done
-    echo -e "\n ✔ Push completado con éxito${RESET}"
+    echo -e "\n ${GREEN}✔ Push completado con éxito${RESET}"
     beep
 }
 
 banner() {
     clear
-    echo -e "${MAGENTA}"
+    echo -e "${PURPLE}"
     echo "╔═════════════════════════════════════════════╗"
     echo "║                                                     ║"
-    echo "║    ██████╗  ██╗████████╗ ██╗  ██╗ ██████╗   ║"
-    echo "║   ██╔═══██╗ ██║╚══██╔══╝ ██║  ██║ ██╔══██╗  ║"
-    echo "║   ██║   ██║ ██║   ██║    ███████║ ██████╔╝  ║"
-    echo "║   ██║▄▄ ██║ ██║   ██║    ██╔══██║ ██╔═══╝   ║"
-    echo "║   ╚██████╔╝ ██║   ██║    ██║  ██║ ██║       ║"
-    echo "║    ╚══▀▀═╝  ╚═╝   ╚═╝    ╚═╝  ╚═╝ ╚═╝       ║"
+    echo "║   ${RED}██████╗  ██╗████████╗ ██╗  ██╗ ██████╗ ${RESET}${PURPLE}   ║"
+    echo "║   ${YELLOW}██╔═══██╗ ██║╚══██╔══╝ ██║  ██║ ██╔══██╗${RESET}${PURPLE}   ║"
+    echo "║   ${GREEN}██║   ██║ ██║   ██║    ███████║ ██████╔╝${RESET}${PURPLE}   ║"
+    echo "║   ${CYAN}██║▄▄ ██║ ██║   ██║    ██╔══██║ ██╔═══╝ ${RESET}${PURPLE}   ║"
+    echo "║   ${PINK}╚██████╔╝ ██║   ██║    ██║  ██║ ██║     ${RESET}${PURPLE}   ║"
+    echo "║   ${ORANGE} ╚══▀▀═╝  ╚═╝   ╚═╝    ╚═╝  ╚═╝ ╚═╝     ${RESET}${PURPLE}   ║"
     echo "║                                                    ║"
     echo "║        💔 POWERED BY SHADOW.XYZ ⭐                 ║"
     echo "╚════════════════════════════════════════════╝"
@@ -101,9 +104,7 @@ banner() {
     beep
 }
 
-separator() {
-    echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"
-}
+separator() { echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"; }
 
 epic_finish() {
     echo -e "${GREEN}"
@@ -115,11 +116,9 @@ epic_finish() {
     echo "╚═══════════════════════════════════════╝"
     echo -e "${RESET}"
     beep
-
-    # 🔥 Mensaje extra
     separator
     typewriter "🌟 Proyecto listo para la acción! 🌟"
-    echo -e "${CYAN}👉 Recuerda: seguirme en mi gituhb https://github.com/Yuji-XDev/${RESET}"
+    echo -e "${CYAN}👉 Recuerda: seguirme en mi GitHub https://github.com/Yuji-XDev/${RESET}"
     echo -e "${ORANGE}⚡ Shadow.xyz 💥${RESET}"
     separator
     beep
@@ -164,7 +163,6 @@ git branch -M main &>/dev/null
 progress_bar "🔗 Configurando remoto"
 git remote add origin "$repo_url" &>/dev/null
 
-(progress_gitpush) & spinner "⏳ Procesando push....."
-wait
+progress_gitpush
 
 epic_finish
