@@ -62,7 +62,7 @@ pkg install curl -y
 Para descargar y ejecutar el script, usa el siguiente comando:
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/Yuji-XDev/Syncly/main/sube.sh -o sube.sh && bash sube.sh
+curl -sSL https://raw.githubusercontent.com/Shadow-nex/Syncly/main/sube.sh -o sube.sh && bash sube.sh
 ```
 
 El script te pedirá:
