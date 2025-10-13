@@ -135,8 +135,8 @@ loading "⚽ Preparando entorno"
 sleep 0.5
 
 echo ""
-read -p "$(echo -e ${YELLOW}'🍂 Ruta de la carpeta:'${RESET}) " folder_path
-read -p "$(echo -e ${GREEN}'🌱 URL del repositorio:'${RESET}) " repo_url
+read -p "$(echo -e ${YELLOW}'Ruta de la carpeta:'${RESET}) " folder_path
+read -p "$(echo -e ${GREEN}'URL del repositorio:'${RESET}) " repo_url
 
 if [ ! -d "$folder_path" ]; then
   echo -e "${RED}❌ Error: Carpeta no encontrada.${RESET}"
@@ -157,7 +157,7 @@ fi
 progress_bar "📦 Agregando archivos"
 git add . &>/dev/null
 
-read -p "$(echo -e ${PINK}'☘️ Mensaje del commit:'${RESET}) " commit_message
+read -p "$(echo -e ${PINK}'Mensaje del commit:'${RESET}) " commit_message
 progress_bar "📝 Realizando commit"
 git commit -m "$commit_message" &>/dev/null
 
