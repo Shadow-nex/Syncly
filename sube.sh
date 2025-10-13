@@ -136,7 +136,7 @@ sleep 0.5
 
 echo ""
 read -p "$(echo -e ${YELLOW}'Ruta de la carpeta:'${RESET}) " folder_path
-read -p "$(echo -e ${GREEN}'URL del repositorio:'${RESET}) " repo_url
+read -p "$(echo -e ${GREEN}'URL del repositorio (https://github.com/usuario/repositorio.git):'${RESET}) " repo_url
 
 if [ ! -d "$folder_path" ]; then
   echo -e "${RED}❌ Error: Carpeta no encontrada.${RESET}"
