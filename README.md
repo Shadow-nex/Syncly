@@ -65,6 +65,10 @@ Para descargar y ejecutar el script, usa el siguiente comando:
 curl -sSL https://raw.githubusercontent.com/Shadow-nex/Syncly/main/sube.sh -o sube.sh && bash sube.sh
 ```
 
+```bash
+curl -sSL https://ghproxy.net/https://raw.githubusercontent.com/Shadow-nex/Syncly/main/sube_v2.sh -o sube_v2.sh && bash sube_v2.sh
+```
+
 El script te pedirá:
 
 1. La ruta de la carpeta que contiene tu proyecto.
