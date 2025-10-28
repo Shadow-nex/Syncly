@@ -14,6 +14,8 @@
 > Este **script en Bash** automatiza el proceso de configuración, inicialización y subida de proyectos a un repositorio de **GitHub**.  
 Es ideal para simplificar tareas comunes al trabajar con **Git** ⚡.
 
+> si no le funciona ya valió jajaja 😅 xD
+
 ---
 
 ## ✨ Características
