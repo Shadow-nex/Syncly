@@ -14,3 +14,5 @@ const pingCommand: Command = {
 };
 
 export default pingCommand;
+
+// olviden esa mrd jajaja 😅
