@@ -126,7 +126,7 @@ fi
 echo ""
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"
 echo -e "${GREEN}✨ ¡Todo listo! Tu proyecto está en GitHub.${RESET}"
-echo -e "${CYAN}👉 Sígueme en GitHub: ${YELLOW}https://github.com/Yuji-XDev${RESET}"
+echo -e "${CYAN}👉 Sígueme en GitHub: ${YELLOW}https://github.com/Shadow-nex${RESET}"
 echo -e "${ORANGE}⚡ Shadow.xyz - Powered Script v2 💥${RESET}"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"
 beep
